@@ -1,0 +1,17 @@
+Builds/
+JuceLibraryCode/
+bin/
+build/
+.vs/
+*.user
+*.suo
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+.DS_Store
+Thumbs.db
+x64/
+ipch/
