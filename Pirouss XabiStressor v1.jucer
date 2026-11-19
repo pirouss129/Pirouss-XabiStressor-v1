@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="pLDW0J" name="Pirouss XabiStressor v1" projectType="audioplug"
+              useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
+              companyName="Pirouss" pluginManufacturer="Pirouss" pluginManufacturerCode="Piro"
+              pluginCode="Pxs1" pluginVST3Category="Dynamics">
+  <MAINGROUP id="zwtxJu" name="Pirouss XabiStressor v1">
+    <GROUP id="{8BC1FF90-9BE4-6DE9-DD45-03AC532E7A9E}" name="Source">
+      <GROUP id="{FF026B6D-646D-6410-9AFA-8683E4A746D2}" name="DSP">
+        <FILE id="axHjJW" name="CompressorCore.h" compile="0" resource="0"
+              file="Source/DSP/CompressorCore.h"/>
+        <FILE id="A5muxf" name="HarmonicSaturation.h" compile="0" resource="0"
+              file="Source/DSP/HarmonicSaturation.h"/>
+        <FILE id="nnHv16" name="InputStage.h" compile="0" resource="0" file="Source/DSP/InputStage.h"/>
+        <FILE id="Bcjg9v" name="MixPeakRmsDetector.h" compile="0" resource="0"
+              file="Source/DSP/MixPeakRmsDetector.h"/>
+        <FILE id="DyYChf" name="MixWetDry.h" compile="0" resource="0" file="Source/DSP/MixWetDry.h"/>
+        <FILE id="yNq52y" name="OutputStage.h" compile="0" resource="0" file="Source/DSP/OutputStage.h"/>
+        <FILE id="MwfUn5" name="PeakRmsDetector.h" compile="0" resource="0"
+              file="Source/DSP/PeakRmsDetector.h"/>
+        <FILE id="zKpA0Z" name="SidechainFilter.h" compile="0" resource="0"
+              file="Source/DSP/SidechainFilter.h"/>
+      </GROUP>
+      <GROUP id="{3A806FAC-0982-C338-6E81-AE8EE74220AE}" name="UI">
+        <FILE id="AjU8Iy" name="BigRotSlider.h" compile="0" resource="0" file="Source/UI/BigRotSlider.h"/>
+        <FILE id="Mf8py0" name="Button.h" compile="0" resource="0" file="Source/UI/Button.h"/>
+        <FILE id="wHWz1e" name="GRMeter.h" compile="0" resource="0" file="Source/UI/GRMeter.h"/>
+        <FILE id="LceEdY" name="header.h" compile="0" resource="0" file="Source/UI/header.h"/>
+        <FILE id="spUpPR" name="HorizontalMeter.h" compile="0" resource="0"
+              file="Source/UI/HorizontalMeter.h"/>
+        <FILE id="JFdiQW" name="HorizontalSlider.h" compile="0" resource="0"
+              file="Source/UI/HorizontalSlider.h"/>
+        <FILE id="XFdWLD" name="Meter.h" compile="0" resource="0" file="Source/UI/Meter.h"/>
+        <FILE id="xae0R0" name="RotSlider.h" compile="0" resource="0" file="Source/UI/RotSlider.h"/>
+        <FILE id="kXlw8b" name="VerticalSlider.h" compile="0" resource="0"
+              file="Source/UI/VerticalSlider.h"/>
+      </GROUP>
+      <FILE id="S6Ytsd" name="juce_logo.png" compile="0" resource="1" file="Source/juce_logo.png"/>
+      <FILE id="AIpjYH" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="bkUna2" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="yqP3k2" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="pqS9IL" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors_headless" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2026 targetFolder="Builds/VisualStudio2026">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="D Pirouss XabiStressor v1"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="R Pirouss XabiStressor v1"
+                       useRuntimeLibDLL="0"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors_headless" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2026>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
