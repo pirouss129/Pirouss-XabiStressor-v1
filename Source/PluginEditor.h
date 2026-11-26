@@ -46,7 +46,7 @@ private:
     // access the processor object that created it.
     PiroussXabiStressorv1AudioProcessor& audioProcessor;
 
-	header headerComponent{ "Pirouss XabiStressor v1" };
+	header headerComponent{ "Pirouss XabiStressor v1.1" };
 	Button bypassButton{ "Bypass", juce::Colours::blueviolet };
 	Button compBypassButton{ "COMP" };
 	Button listenSCButton{ "Listen SC", juce::Colours::red };
@@ -60,10 +60,10 @@ private:
 	RotSlider detectorInputSlider{ "Detect Input" };
 	RotSlider detectorFilterSlider{ "Detect Filter" };
 	BigRotSlider ratioSlider{ "Ratio" };
-	RotSlider distOddSlider{ "Dist Odd" };
-	RotSlider distEvenSlider{ "Dist Even" };
+	RotSlider distOddSlider{ "Out Dist Odd" };
+	RotSlider distEvenSlider{ "Out Dist Even" };
 	HorizontalSlider thresholdSlider{ "Thr" };
-	RotSlider peakRmsSlider{ "Peak / RMS" };
+	RotSlider peakRmsSlider{ "Detect Peak/RMS" };
 	Meter inputMeter;
 	Meter outputMeter;
 	HorizontalMeter horizontalMeter;

@@ -331,7 +331,12 @@ juce::AudioProcessorValueTreeState::ParameterLayout PiroussXabiStressorv1AudioPr
     juce::AudioProcessorValueTreeState::ParameterLayout layout;
 
 	// --- INPUT STAGE ---
-	layout.add(std::make_unique<juce::AudioParameterFloat>("INPUT_STAGE", "Input Stage", 0.0f, 10.0f, 5.0f));
+	layout.add(std::make_unique<juce::AudioParameterFloat>(
+        juce::ParameterID{ "INPUT_STAGE", 1 },
+        "Input Stage",
+        juce::NormalisableRange<float>(0.0f, 10.0f, 0.5f),
+        5.0f
+    ));
 	// --- BYPASS ---
 	layout.add(std::make_unique<juce::AudioParameterBool>("BYPASS", "Bypass", false));
 
@@ -365,34 +370,68 @@ juce::AudioProcessorValueTreeState::ParameterLayout PiroussXabiStressorv1AudioPr
 
 	// --- PEAK / RMS ---
     layout.add(std::make_unique<juce::AudioParameterFloat>(
-        "MIX_PEAK_RMS",
+        juce::ParameterID{ "MIX_PEAK_RMS", 1 },
         "Mix Peak / RMS",
-        0.0f,
-        10.0f,
+        juce::NormalisableRange<float>(0.0f, 10.0f, 0.5f),
 		0.0f // Valeur par défaut à 0 full peak
     ));
 	// --- ATTACK ---
-	layout.add(std::make_unique<juce::AudioParameterFloat>("ATTACK", "Attack", 0.0f, 10.0f, 0.0f));
+	layout.add(std::make_unique<juce::AudioParameterFloat>(
+        juce::ParameterID{ "ATTACK", 1 },
+        "Attack",
+        juce::NormalisableRange<float>(0.0f, 10.0f, 0.5f),
+        0.0f
+    ));
 	// --- RELEASE ---
-	layout.add(std::make_unique<juce::AudioParameterFloat>("RELEASE", "Release", 0.0f, 10.0f, 0.0f));
-	// --- THRESHOLD ---
-	layout.add(std::make_unique<juce::AudioParameterFloat>("THRESHOLD", "Threshold", -40.0f, 0.0f, -20.0f));
+	layout.add(std::make_unique<juce::AudioParameterFloat>(
+        juce::ParameterID{ "RELEASE", 1 },
+        "Release",
+        juce::NormalisableRange<float>(0.0f, 10.0f, 0.5f),
+        0.0f
+    ));
+    // --- THRESHOLD ---
+    layout.add(std::make_unique<juce::AudioParameterFloat>(
+        juce::ParameterID{ "THRESHOLD", 1 },
+        "Threshold",
+        juce::NormalisableRange<float>(-40.0f, 0.0f, 1.0f), // min, max, step (1.0 dB)
+        -18.0f // valeur par défaut
+    ));
 	// --- RATIO ---
     layout.add(std::make_unique<juce::AudioParameterChoice>(
         "RATIO", "Ratio Mode",
-        juce::StringArray{ "LOL 1", "LOL 2", "Why Not", "OK", "Haaaaa", "Opto", "Sgal Mood" },
+        juce::StringArray{ "LOL 1", "LOL 1.5", "LOL 2", "Why Not", "OK", "Haaaaa", "Opto", "Sgal Mood" },
         0 // Index par défaut (1:1 => LOL 1)
     ));
 	// --- COMP BYPASS ---
 	layout.add(std::make_unique<juce::AudioParameterBool>("COMP_BYPASS", "Comp Bypass", true));
 	// --- ODD SATURATION ---
-	layout.add(std::make_unique<juce::AudioParameterFloat>("DIST_ODD", "Dist Odd", 0.0f, 10.0f, 0.0f));
+	layout.add(std::make_unique<juce::AudioParameterFloat>(
+        juce::ParameterID{ "DIST_ODD", 1 },
+        "Dist Odd",
+        juce::NormalisableRange<float>(0.0f, 10.0f, 0.5f),
+        0.0f
+    ));
 	// --- EVEN SATURATION ---
-	layout.add(std::make_unique<juce::AudioParameterFloat>("DIST_EVEN", "Dist Even", 0.0f, 10.0f, 0.0f));
+	layout.add(std::make_unique<juce::AudioParameterFloat>(
+        juce::ParameterID{ "DIST_EVEN", 1 },
+        "Dist Even",
+        juce::NormalisableRange<float>(0.0f, 10.0f, 0.5f),
+        0.0f
+    ));
 	// --- OUTPUT STAGE ---
-	layout.add(std::make_unique<juce::AudioParameterFloat>("OUTPUT_STAGE", "Output Stage", 0.0f, 10.0f, 5.0f));
+	layout.add(std::make_unique<juce::AudioParameterFloat>(
+        juce::ParameterID{ "OUTPUT_STAGE", 1 },
+        "Output Stage",
+        juce::NormalisableRange<float>(0.0f, 10.0f, 0.5f),
+        5.0f
+    ));
     // --- WET/DRY MIX ---
-    layout.add(std::make_unique<juce::AudioParameterFloat>("WET_DRY_MIX", "Wet Dry Mix", 0.0f, 10.0f, 10.0f));
+    layout.add(std::make_unique<juce::AudioParameterFloat>(
+        juce::ParameterID{ "WET_DRY_MIX", 1 },
+        "Wet Dry Mix",
+        juce::NormalisableRange<float>(0.0f, 10.0f, 0.5f), // min, max, step (0.5)
+        10.0f // valeur par défaut
+    ));
 	return layout;
 	
 }

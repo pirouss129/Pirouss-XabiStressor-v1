@@ -38,7 +38,7 @@ public:
 
     void setRatioMode(int modeIndex)
     {
-        currentRatioIndex = juce::jlimit(0, 6, modeIndex);
+        currentRatioIndex = juce::jlimit(0, 7, modeIndex);
     }
 
     // --- TRAITEMENT AUDIO DU COMPRESSEUR ---
@@ -64,7 +64,7 @@ public:
             float targetGrDb = 0.0f;
             float overshoot = inputDb - thresholdDb;
 
-            if (currentRatioIndex == 6) // Sgal Mood (Nuke)
+            if (currentRatioIndex == 7) // Sgal Mood (Nuke)
             {
                 if (inputDb > thresholdDb)
                     targetGrDb = overshoot * 0.9f;
@@ -119,9 +119,9 @@ private:
     float currentGrDb = 0.0f;
 
     // --- VARIABLES DE CONFIGURATION DES RATIOS & KNEES (Tweakables à souhait !) ---
-    // Indices : 0: LOL 1, 1: LOL 2, 2: Why Not, 3: là OK, 4: Héhé, 5: Opto, 6: Sgal Mood
-    const float ratioValues[7] = { 1.0f, 2.0f, 3.0f, 4.0f, 6.0f, 10.0f, 20.0f };
-    const float kneeWidthValues[7] = { 0.0f, 6.0f, 4.0f, 2.0f, 2.0f,  8.0f,  0.0f }; // Opto a un gros knee doux, Nuke aucun
+    // Indices : 0: LOL 1, 1: LOL 1.5, 2: LOL 2, 3: Why Not, 4: là OK, 5: Héhé, 6: Opto, 7: Sgal Mood
+    const float ratioValues[8] = { 1.0f, 1.5f, 2.0f, 3.0f, 4.0f, 6.0f, 10.0f, 20.0f };
+    const float kneeWidthValues[8] = { 0.0f, 6.0f, 5.0f, 4.0f, 2.0f, 2.0f,  8.0f,  0.0f }; // Opto a un gros knee doux, Nuke aucun
 
     void updateEnvelopeCoefficients()
     {

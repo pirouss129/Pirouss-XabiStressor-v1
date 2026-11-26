@@ -18,7 +18,7 @@ public:
     void setOutputGainFromSlider(float sliderValue)
     {
         // Même logique de mappage que l'Input : 
-        // 0 = -24 dB, 5 = 0 dB (unity), 10 = +24 dB
+        // 0 = -24 dB, 5.0 = 0 dB (unity), 10.0 = +24 dB
         float db = juce::jmap(sliderValue, 0.0f, 10.0f, -24.0f, 24.0f);
         targetGainLinear = juce::Decibels::decibelsToGain(db);
     }
